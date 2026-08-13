@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Temperature Converter</title>
+    <link rel="stylesheet" href="Task 3.css">
+</head>
+<body>
+
+<div class="container">
+    <h1>🌡 Temperature Converter</h1>
+
+    <div class="input-group">
+        <label>Enter Temperature</label>
+<input
+type="number"
+id="temperature"
+placeholder="Enter value"
+oninput="convertTemperature()">    </div>
+
+    <div class="input-group">
+        <label>Select Unit</label>
+
+        <select id="unit" onchange="convertTemperature()">
+            <option value="celsius">Celsius (°C)</option>
+            <option value="fahrenheit">Fahrenheit (°F)</option>
+            <option value="kelvin">Kelvin (K)</option>
+        </select>
+    </div>
+
+    <button onclick="convertTemperature()">
+        Convert
+    </button>
+
+    <p id="error"></p>
+
+    <div class="result">
+        <h3>Converted Values</h3>
+
+        <p id="celsius"></p>
+        <p id="fahrenheit"></p>
+        <p id="kelvin"></p>
+
+    </div>
+
+</div>
+
+<script>
+    function convertTemperature() {
+
+    const tempInput = document.getElementById("temperature").value.trim();
+
+    const unit = document.getElementById("unit").value;
+
+    const error = document.getElementById("error");
+
+    const celsius = document.getElementById("celsius");
+
+    const fahrenheit = document.getElementById("fahrenheit");
+
+    const kelvin = document.getElementById("kelvin");
+
+
+
+    error.innerHTML = "";
+    celsius.innerHTML = "";
+    fahrenheit.innerHTML = "";
+    kelvin.innerHTML = "";
+
+
+
+    if (tempInput === "" || isNaN(tempInput)) {
+
+        error.innerHTML = "Please enter a valid numeric value.";
+
+        return;
+    }
+
+    let temp = parseFloat(tempInput);
+
+    let C, F, K;
+
+    if (unit === "celsius") {
+
+        if (temp < -273.15) {
+
+            error.innerHTML = "Temperature cannot be below Absolute Zero (-273.15°C).";
+            return;
+        }
+
+        C = temp;
+        F = (C * 9 / 5) + 32;
+        K = C + 273.15;
+
+    }
+
+    else if (unit === "fahrenheit") {
+
+        if (temp < -459.67) {
+
+            error.innerHTML = "Temperature cannot be below Absolute Zero (-459.67°F).";
+            return;
+        }
+
+        F = temp;
+        C = (F - 32) * 5 / 9;
+        K = C + 273.15;
+
+    }
+
+    else {
+
+        if (temp < 0) {
+
+            error.innerHTML = "Temperature cannot be below Absolute Zero (0 K).";
+            return;
+        }
+
+        K = temp;
+        C = K - 273.15;
+        F = (C * 9 / 5) + 32;
+
+    }
+
+    celsius.innerHTML = `Celsius : ${C.toFixed(2)} °C`;
+
+    fahrenheit.innerHTML = `Fahrenheit : ${F.toFixed(2)} °F`;
+
+    kelvin.innerHTML = `Kelvin : ${K.toFixed(2)} K`;
+
+}
+</script>
+
+</body>
+</html>
