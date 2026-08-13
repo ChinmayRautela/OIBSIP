@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Landing Page</title>
+    <link rel="stylesheet" href="Task 1.css">
+</head>
+<body>
+    <!--HEADER-->
+    <header>
+        <nav>
+            <div class="logo">
+                <h2><span>Fit</span>Verse</h2>
+            </div>
+          <ul class="nav-links">
+    <li><a href="#">Home</a></li>
+    <li><a href="#">About</a></li>
+    <li><a href="#">Services</a></li>
+    <li><a href="#">Contact</a></li>
+</ul>
+            <button>Join Now</button>
+            <div class="menu-icon" id="menuIcon">
+            &#9776;
+            </div>
+
+        </nav>
+        <!---->
+        <section class="hero">
+            <div class="hero-content">
+                <h1>Make Your<span> Body Stronger</span></h1>
+                <p>
+                   Join FitVerse and start your journey to a healthier, stringer you. 
+                </p>
+                <button>Get Started</button>
+            </div>
+            <div class="hero-image">
+               <!--<img src="https://www.bing.com/images/search?view=detailV2&ccid=EDBNp4EX&id=63451CA4BFEF06E05BB44D7BA30A670E673C06A5&thid=OIP.EDBNp4EXogYaAi43NnVVZgHaIG&mediaurl=https%3a%2f%2fpngimg.com%2fuploads%2frunning_man%2frunning_man_PNG11693.png&exph=1000&expw=915&q=running+png+image&mode=overlay&FORM=IQFRBA&ck=457EC12BF90DAEA79FEF77AFF1FFD8F7&selectedIndex=0&idpp=serp" alt="Running Man">--> 
+            </div>
+        </section>
+     </header>
+        <!---->
+        <section class="Features">
+                <h2>Our Features</h2>
+                <p>
+                    Everything you need to achive your fitness goals.
+                </p>
+
+             <div class="features-con">
+                <article>
+                <h4>Personal Traning</h4>
+                <p>
+                    Word with certifired trainers 
+                    to reach your goals faster.
+                </p>
+                </article>
+                <article>
+                    <h4>Nutrition Guide</h4>
+                    <p>
+                        Get personalized meal plans and nutrition advice.
+                    </p>
+                </article>
+                <article>
+                    <h4>Workout Plans</h4>
+                    <p>
+                        Access customized wprkout plans for all levels.
+                    </p>
+                </article>
+            </div>
+     </section>
+<!--About section-->
+     <section class="about">
+            <div class="about-content">
+                <small>ABOUT US</small>
+                <h2>We Are Here to Make You Stronger</h2>
+                <p>
+                    At FitVerse, we believe fitness is more than just 
+                    workouts- it's a lifestyle. Our mission is to 
+                    support you with the best traning, nutrition, and motivation.
+                </p>
+                  <a href="#" class="btn">Learn More</a>
+            </div>
+     </section>
+
+     <section class="testimonial">
+        <h2>What Our Members Say</h2>
+         <button class="prev">&#10094;</button>
+         <div class="comment">
+            <p>
+                FitVerse helped me build healthier habits and feel more confident every day. The support from the trainers made all the difference!
+            </p>
+            <div class="member">
+                 <img src="https://static.vecteezy.com/system/resources/thumbnails/037/756/288/small_2x/ai-generated-stylish-young-woman-in-professional-attire-professional-job-interview-attire-image-photo.jpeg" alt="">
+                   <div>
+                        <h4>Emily Carter</h4>
+                        <span>Member</span>
+                    </div>
+            </div>
+         </div>
+           <button class="next">&#10095;</button>
+        
+     </section>
+<!--Footer-->
+    <footer>
+        <div class="footer-logo">
+
+            <h2><span>Fit</span>Verse</h2>
+
+            <p>
+                Your journey to a healthier,
+                stronger and better you starts here.
+            </p>
+
+        </div>
+
+        <div class="footer-links">
+
+            <h3>Quick Links</h3>
+
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Services</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+
+        </div>
+
+        <div class="footer-contact">
+
+            <h3>Contact</h3>
+
+            <p>+1 234 567 8900</p>
+            <p>info@fitVerse.com</p>
+            <p>123 Fitness St, Fit City</p>
+
+        </div>
+
+        <div class="footer-social">
+
+            <h3>Follow Us</h3>
+
+            <a href="#">Facebook</a>
+            <a href="#">Instagram</a>
+            <a href="#">Twitter</a>
+            <a href="#">YouTube</a>
+
+        </div>
+
+    </footer>
+
+        <div class="copyright">
+        <p>© 2025 FitVerse. All rights reserved.</p>
+        </div>
+        <script>
+
+const menuIcon = document.getElementById("menuIcon");
+const navLinks = document.querySelector(".nav-links");
+
+menuIcon.addEventListener("click",()=>{
+
+    navLinks.classList.toggle("active");
+
+    if(navLinks.classList.contains("active")){
+        menuIcon.innerHTML="&#10005;";
+    }
+    else{
+        menuIcon.innerHTML="&#9776;";
+    }
+
+});
+
+</script>
+</body>
+</html>
